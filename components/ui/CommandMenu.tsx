@@ -13,7 +13,7 @@ import {
   Briefcase,
   FolderGit2,
   Boxes,
-  AtSign,
+  AtSign
 } from "lucide-react";
 import {
   createContext,
@@ -21,7 +21,7 @@ import {
   useContext,
   useEffect,
   useState,
-  type ReactNode,
+  type ReactNode
 } from "react";
 import { toast } from "sonner";
 import { profile, navSections } from "@/data/content";
@@ -37,16 +37,20 @@ const Ctx = createContext<CommandMenuCtx | null>(null);
 
 export function useCommandMenu() {
   const ctx = useContext(Ctx);
-  if (!ctx) throw new Error("useCommandMenu must be used inside CommandMenuProvider");
+  if (!ctx)
+    throw new Error("useCommandMenu must be used inside CommandMenuProvider");
   return ctx;
 }
 
-const sectionIcon: Record<string, React.ComponentType<{ className?: string }>> = {
+const sectionIcon: Record<
+  string,
+  React.ComponentType<{ className?: string }>
+> = {
   about: User,
   experience: Briefcase,
   projects: FolderGit2,
   skills: Boxes,
-  contact: AtSign,
+  contact: AtSign
 };
 
 export function CommandMenuProvider({ children }: { children: ReactNode }) {
@@ -110,23 +114,20 @@ export function CommandMenuProvider({ children }: { children: ReactNode }) {
             className="fixed inset-0 z-[80] flex items-start justify-center px-4 pt-[10vh] sm:pt-[18vh]"
             onMouseDown={(e) => {
               if (e.target === e.currentTarget) close();
-            }}
-          >
+            }}>
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" aria-hidden />
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              aria-hidden
+            />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.97, y: 8 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.97, y: 4 }}
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-[rgba(15,18,24,0.92)] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl"
-            >
-              <Command
-                label="Command palette"
-                className="flex flex-col"
-                loop
-              >
+              className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-[rgba(15,18,24,0.92)] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl">
+              <Command label="Command palette" className="flex flex-col" loop>
                 <div className="flex items-center gap-3 border-b border-white/[0.06] px-4">
                   <Search className="h-4 w-4 shrink-0 text-[var(--color-text-dim)]" />
                   <Command.Input
@@ -244,8 +245,7 @@ function Item({ icon: Icon, label, hint, onSelect }: ItemProps) {
   return (
     <Command.Item
       onSelect={onSelect}
-      className="group flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-[var(--color-text-muted)] transition-colors aria-selected:bg-white/[0.06] aria-selected:text-[var(--color-text)] data-[selected=true]:bg-white/[0.06] data-[selected=true]:text-[var(--color-text)]"
-    >
+      className="group flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-[var(--color-text-muted)] transition-colors aria-selected:bg-white/[0.06] aria-selected:text-[var(--color-text)] data-[selected=true]:bg-white/[0.06] data-[selected=true]:text-[var(--color-text)]">
       <Icon className="h-4 w-4 shrink-0 text-[var(--color-text-dim)] group-aria-selected:text-[var(--color-accent-soft)]" />
       <span className="flex-1 truncate">{label}</span>
       {hint && (
