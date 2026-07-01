@@ -36,8 +36,7 @@ export function Resume() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="primary"
-                  size="md"
-                >
+                  size="md">
                   Download PDF
                   <Download className="h-4 w-4" />
                 </ButtonLink>
@@ -46,8 +45,7 @@ export function Resume() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="ghost"
-                  size="md"
-                >
+                  size="md">
                   View
                   <ArrowUpRight className="h-4 w-4" />
                 </ButtonLink>

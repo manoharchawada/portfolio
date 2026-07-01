@@ -6,12 +6,12 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { useEffect, useState } from "react";
-import { profile } from "@/data/content";
 import { ButtonLink } from "@/components/ui/Button";
+import { profile } from "@/data/content";
 
 const HeroCanvas = dynamic(() => import("@/components/three/HeroCanvas"), {
   ssr: false,
-  loading: () => null,
+  loading: () => null
 });
 
 function useIsDesktop() {
@@ -34,7 +34,7 @@ function RotatingRoles() {
     if (prefersReduced) return;
     const id = setInterval(
       () => setIdx((i) => (i + 1) % profile.roles.length),
-      2400,
+      2400
     );
     return () => clearInterval(id);
   }, [prefersReduced]);
@@ -42,7 +42,7 @@ function RotatingRoles() {
   // Reserve enough width for the longest role so children (absolute) never clip.
   const longest = profile.roles.reduce(
     (a, b) => (a.length >= b.length ? a : b),
-    "",
+    ""
   );
 
   return (
@@ -60,7 +60,7 @@ function RotatingRoles() {
           initial={false}
           animate={{
             y: i === idx ? "0%" : i < idx ? "-110%" : "110%",
-            opacity: i === idx ? 1 : 0,
+            opacity: i === idx ? 1 : 0
           }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-y-0 left-0 flex items-center whitespace-nowrap font-mono text-[0.95em] tracking-tight text-[var(--color-accent-soft)]">
@@ -115,7 +115,7 @@ export function Hero() {
             transition={{
               duration: 0.7,
               delay: 0.05,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1]
             }}
             className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[var(--color-text)] sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="block">{profile.name.split(" ")[0]}</span>
@@ -130,7 +130,7 @@ export function Hero() {
             transition={{
               duration: 0.6,
               delay: 0.18,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1]
             }}
             className="mt-5 flex items-baseline gap-2 text-base text-[var(--color-text-muted)] sm:text-lg">
             <span className="text-[var(--color-text-dim)]">~/</span>
@@ -143,22 +143,19 @@ export function Hero() {
             transition={{
               duration: 0.6,
               delay: 0.28,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1]
             }}
             className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">
-            Software Engineer passionate about building high-quality mobile and web experiences with{" "}
+            Software Engineer passionate about building high-quality mobile and
+            web experiences with{" "}
             <span className="text-[var(--color-text)]">
               React Native, React, and Node.js
             </span>
             —combining{" "}
-            <span className="text-[var(--color-text)]">
-              clean architecture
-            </span>
+            <span className="text-[var(--color-text)]">clean architecture</span>
             ,{" "}
-            <span className="text-[var(--color-text)]">
-              thoughtful design
-            </span>
-            , and{" "}
+            <span className="text-[var(--color-text)]">thoughtful design</span>,
+            and{" "}
             <span className="text-[var(--color-text)]">
               scalable engineering
             </span>

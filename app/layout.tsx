@@ -10,13 +10,13 @@ import { CommandMenuProvider } from "@/components/ui/CommandMenu";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 const siteUrl = "https://manoharchawada.dev"; // Replace with your actual domain
@@ -27,24 +27,24 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: `${profile.name} — ${profile.role}`,
-    template: `%s · ${profile.name}`,
+    template: `%s · ${profile.name}`
   },
   description,
   keywords: [
-  "Manohar Chawada",
-  "React Native Developer",
-  "Mobile App Developer",
-  "Next.js Developer",
-  "React Native",
-  "TypeScript",
-  "Redux Toolkit",
-  "Firebase",
-  "AWS IVS",
-  "Agora SDK",
-  "OTT Platforms",
-  "Full Stack Developer",
-  "Portfolio",
-],
+    "Manohar Chawada",
+    "React Native Developer",
+    "Mobile App Developer",
+    "Next.js Developer",
+    "React Native",
+    "TypeScript",
+    "Redux Toolkit",
+    "Firebase",
+    "AWS IVS",
+    "Agora SDK",
+    "OTT Platforms",
+    "Full Stack Developer",
+    "Portfolio"
+  ],
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
   openGraph: {
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: `${profile.name} — Portfolio`,
     title: `${profile.name} — ${profile.role}`,
-    description,
+    description
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.role}`,
     description,
-    creator: "@manoharchawada",
+    creator: "@manoharchawada"
   },
   robots: {
     index: true,
@@ -68,23 +68,23 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+      "max-snippet": -1
+    }
   },
   icons: {
-    icon: "/favicon.ico",
-  },
+    icon: "/favicon.ico"
+  }
 };
 
 export const viewport: Viewport = {
   themeColor: "#07080c",
   colorScheme: "dark",
   width: "device-width",
-  initialScale: 1,
+  initialScale: 1
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -99,16 +99,15 @@ export default function RootLayout({
     sameAs: [profile.github, profile.linkedin].filter(Boolean),
     address: {
       "@type": "PostalAddress",
-      addressLocality: profile.location,
-    },
+      addressLocality: profile.location
+    }
   };
 
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
-    >
+      suppressHydrationWarning>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <a href="#main" className="skip-link">
           Skip to content
@@ -122,8 +121,8 @@ export default function RootLayout({
               background: "rgba(20, 25, 37, 0.9)",
               border: "1px solid rgba(255,255,255,0.08)",
               color: "#e6e8ee",
-              backdropFilter: "blur(8px)",
-            },
+              backdropFilter: "blur(8px)"
+            }
           }}
         />
         <Analytics />
