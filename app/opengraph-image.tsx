@@ -19,7 +19,7 @@ export default async function OG() {
         background:
           "radial-gradient(1200px 600px at 80% -10%, rgba(90,169,255,0.18), transparent 60%), radial-gradient(900px 500px at -10% 20%, rgba(125,211,252,0.10), transparent 60%), #07080c",
         color: "#e6e8ee",
-        fontFamily: "system-ui, -apple-system, Segoe UI, Inter, sans-serif",
+        fontFamily: "system-ui, -apple-system, Segoe UI, Inter, sans-serif"
       }}>
       {/* Header */}
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
@@ -35,7 +35,7 @@ export default async function OG() {
             justifyContent: "center",
             fontSize: 22,
             letterSpacing: -0.5,
-            color: "#e6e8ee",
+            color: "#e6e8ee"
           }}>
           RS
         </div>
@@ -45,7 +45,7 @@ export default async function OG() {
             fontSize: 18,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "#7dd3fc",
+            color: "#7dd3fc"
           }}>
           Portfolio · 2026
         </div>
@@ -56,7 +56,7 @@ export default async function OG() {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: 16,
+          gap: 16
         }}>
         <div
           style={{
@@ -64,7 +64,7 @@ export default async function OG() {
             fontSize: 96,
             fontWeight: 600,
             lineHeight: 1.02,
-            letterSpacing: -2,
+            letterSpacing: -2
           }}>
           {profile.name}.
         </div>
@@ -74,7 +74,7 @@ export default async function OG() {
             fontSize: 32,
             color: "#8a91a3",
             maxWidth: 980,
-            lineHeight: 1.3,
+            lineHeight: 1.3
           }}>
           {profile.role} — backend systems, distributed workflows, and clean
           engineering.
@@ -90,7 +90,7 @@ export default async function OG() {
           fontSize: 22,
           color: "#5a6275",
           borderTop: "1px solid rgba(255,255,255,0.08)",
-          paddingTop: 28,
+          paddingTop: 28
         }}>
         <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
           <div style={{ display: "flex", color: "#e6e8ee" }}>Spring Boot</div>
@@ -106,6 +106,6 @@ export default async function OG() {
         </div>
       </div>
     </div>,
-    { ...size },
+    { ...size }
   );
 }
