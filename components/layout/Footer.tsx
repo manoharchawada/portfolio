@@ -19,8 +19,7 @@ export function Footer() {
           <a
             href={`mailto:${profile.email}`}
             aria-label="Email"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-[var(--color-text-muted)] transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)]"
-          >
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-[var(--color-text-muted)] transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)]">
             <Mail className="h-4 w-4" />
           </a>
           <a
@@ -28,8 +27,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-[var(--color-text-muted)] transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)]"
-          >
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-[var(--color-text-muted)] transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)]">
             <GithubIcon className="h-4 w-4" />
           </a>
           <a
@@ -37,8 +35,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-[var(--color-text-muted)] transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)]"
-          >
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-[var(--color-text-muted)] transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)]">
             <LinkedinIcon className="h-4 w-4" />
           </a>
         </div>

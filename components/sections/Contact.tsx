@@ -24,22 +24,22 @@ export function Contact() {
       value: profile.email,
       href: `mailto:${profile.email}`,
       icon: Mail,
-      copyable: true,
+      copyable: true
     },
     {
       id: "linkedin",
       label: "LinkedIn",
       value: "/in/manohar-chawada-7976311b7",
       href: profile.linkedin,
-      icon: LinkedinIcon,
+      icon: LinkedinIcon
     },
     {
       id: "github",
       label: "GitHub",
       value: "@manoharchawada",
       href: profile.github,
-      icon: GithubIcon,
-    },
+      icon: GithubIcon
+    }
   ];
 
   const copy = async (value: string) => {
@@ -70,8 +70,7 @@ export function Contact() {
                   href={c.href}
                   target={c.id === "email" ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className="group relative flex h-full flex-col gap-3 overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.015] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-accent)]/25 hover:bg-white/[0.03] sm:p-6"
-                >
+                  className="group relative flex h-full flex-col gap-3 overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.015] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-accent)]/25 hover:bg-white/[0.03] sm:p-6">
                   <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_0%,rgba(90,169,255,0.1),transparent_60%)]" />
                   </div>
@@ -97,8 +96,7 @@ export function Contact() {
                         copy(c.value);
                       }}
                       className="relative mt-1 inline-flex w-fit items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.02] px-2.5 py-1 text-[0.7rem] text-[var(--color-text-muted)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)]"
-                      aria-label="Copy email"
-                    >
+                      aria-label="Copy email">
                       <Copy className="h-3 w-3" />
                       Copy
                     </button>

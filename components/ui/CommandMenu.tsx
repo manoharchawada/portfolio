@@ -63,10 +63,14 @@ export function CommandMenuProvider({ children }: { children: ReactNode }) {
         e.preventDefault();
         toggle();
       }
+      if (e.key === "Escape" && open) {
+        e.preventDefault();
+        setOpen(false);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [toggle]);
+  }, [toggle, open]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -132,6 +136,7 @@ export function CommandMenuProvider({ children }: { children: ReactNode }) {
                   <Search className="h-4 w-4 shrink-0 text-[var(--color-text-dim)]" />
                   <Command.Input
                     autoFocus
+                    ref={(ref) => ref?.focus()}
                     placeholder="Jump to a section, copy email, open links…"
                     className="flex-1 bg-transparent py-4 text-[0.95rem] text-[var(--color-text)] placeholder:text-[var(--color-text-dim)] focus:outline-none"
                   />
@@ -244,6 +249,7 @@ type ItemProps = {
 function Item({ icon: Icon, label, hint, onSelect }: ItemProps) {
   return (
     <Command.Item
+      value={label + (hint ? ` ${hint}` : "")}
       onSelect={onSelect}
       className="group flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-[var(--color-text-muted)] transition-colors aria-selected:bg-white/[0.06] aria-selected:text-[var(--color-text)] data-[selected=true]:bg-white/[0.06] data-[selected=true]:text-[var(--color-text)]">
       <Icon className="h-4 w-4 shrink-0 text-[var(--color-text-dim)] group-aria-selected:text-[var(--color-accent-soft)]" />
