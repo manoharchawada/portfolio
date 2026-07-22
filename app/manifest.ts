@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${profile.name} — ${profile.role}`,
     short_name: profile.name.split(" ")[0],
     description:
-      "Software Engineer passionate about building high-quality mobile and web experiences with React Native, React, and Node.js—combining clean architecture, thoughtful design, and scalable engineering.",
+      "Experienced React Native and Full Stack Developer with 3+ years of experience building scalable mobile and web applications using React Native, React.js, Node.js, Express.js, MongoDB, Firebase, AWS, and TypeScript.",
     start_url: "/",
     display: "standalone",
     background_color: "#07080c",

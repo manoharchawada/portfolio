@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
   display: "swap"
 });
 
-const siteUrl = "https://manoharchawada.dev"; // Replace with your actual domain
+const siteUrl = "https://manoharchawada.vercel.app";
 const description =
-  "React Native Developer focused on high-performance mobile and web applications for Android and iOS. 3 years experience, 4 production apps shipped.";
+  "Experienced React Native and Full Stack Developer with 3+ years of experience building scalable mobile and web applications using React Native, React.js, Node.js, Express.js, MongoDB, Firebase, AWS, and TypeScript.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,32 +33,50 @@ export const metadata: Metadata = {
   keywords: [
     "Manohar Chawada",
     "React Native Developer",
-    "Mobile App Developer",
-    "Next.js Developer",
-    "React Native",
-    "TypeScript",
-    "Redux Toolkit",
-    "Firebase",
-    "AWS IVS",
-    "Agora SDK",
-    "OTT Platforms",
     "Full Stack Developer",
+    "React Native & Full Stack Developer",
+    "React.js",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Firebase",
+    "AWS",
+    "REST APIs",
+    "Redux",
+    "Git",
+    "Mobile App Developer",
+    "Software Engineer",
     "Portfolio"
   ],
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
+  publisher: profile.name,
+  alternates: {
+    canonical: siteUrl
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
     siteName: `${profile.name} — Portfolio`,
     title: `${profile.name} — ${profile.role}`,
-    description
+    description,
+    images: [
+      {
+        url: `${siteUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: `${profile.name} — ${profile.role}`
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.role}`,
     description,
+    images: [`${siteUrl}/opengraph-image`],
     creator: "@manoharchawada"
   },
   robots: {
@@ -68,11 +86,16 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-image-preview": "large",
-      "max-snippet": -1
+      "max-snippet": -1,
+      "max-video-preview": -1
     }
   },
   icons: {
-    icon: "/favicon.ico"
+    icon: [
+      { url: "/icon", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico" }
+    ],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }]
   }
 };
 
@@ -88,19 +111,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const personJsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: profile.name,
-    url: siteUrl,
-    jobTitle: profile.role,
-    email: `mailto:${profile.email}`,
-    image: `${siteUrl}/avatar.png`,
-    sameAs: [profile.github, profile.linkedin].filter(Boolean),
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: profile.location
-    }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: profile.name,
+        url: siteUrl,
+        jobTitle: profile.role,
+        email: `mailto:${profile.email}`,
+        image: `${siteUrl}/avatar.png`,
+        sameAs: [profile.github, profile.linkedin].filter(Boolean),
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Indore",
+          addressCountry: "India"
+        },
+        knowsAbout: [
+          "React Native",
+          "React.js",
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Firebase",
+          "AWS",
+          "REST APIs",
+          "Redux",
+          "Git"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: `${profile.name} — Portfolio`,
+        description,
+        publisher: {
+          "@id": `${siteUrl}/#person`
+        }
+      }
+    ]
   };
 
   return (
@@ -129,7 +182,7 @@ export default function RootLayout({
         <SpeedInsights />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </body>
     </html>

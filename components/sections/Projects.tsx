@@ -102,7 +102,7 @@ function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
 
-          <div className="mt-6 flex items-center gap-2 pt-4">
+          <div className="mt-auto flex items-center gap-2 pt-6">
             <a
               href={project.website}
               target="_blank"

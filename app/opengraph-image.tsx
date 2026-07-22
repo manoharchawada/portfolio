@@ -37,7 +37,7 @@ export default async function OG() {
             letterSpacing: -0.5,
             color: "#e6e8ee"
           }}>
-          RS
+          MC
         </div>
         <div
           style={{
@@ -47,7 +47,7 @@ export default async function OG() {
             textTransform: "uppercase",
             color: "#7dd3fc"
           }}>
-          Portfolio · 2026
+          Portfolio
         </div>
       </div>
 
@@ -76,8 +76,7 @@ export default async function OG() {
             maxWidth: 980,
             lineHeight: 1.3
           }}>
-          {profile.role} — backend systems, distributed workflows, and clean
-          engineering.
+          {profile.role} — high-performance mobile & web applications, scalable APIs, and clean engineering.
         </div>
       </div>
 
@@ -93,13 +92,15 @@ export default async function OG() {
           paddingTop: 28
         }}>
         <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-          <div style={{ display: "flex", color: "#e6e8ee" }}>Spring Boot</div>
+          <div style={{ display: "flex", color: "#e6e8ee" }}>React Native</div>
+          <div style={{ display: "flex", color: "#5a6275" }}>·</div>
+          <div style={{ display: "flex", color: "#e6e8ee" }}>React.js</div>
           <div style={{ display: "flex", color: "#5a6275" }}>·</div>
           <div style={{ display: "flex", color: "#e6e8ee" }}>Node.js</div>
           <div style={{ display: "flex", color: "#5a6275" }}>·</div>
-          <div style={{ display: "flex", color: "#e6e8ee" }}>PostgreSQL</div>
+          <div style={{ display: "flex", color: "#e6e8ee" }}>MongoDB</div>
           <div style={{ display: "flex", color: "#5a6275" }}>·</div>
-          <div style={{ display: "flex", color: "#e6e8ee" }}>gRPC</div>
+          <div style={{ display: "flex", color: "#e6e8ee" }}>AWS</div>
         </div>
         <div style={{ display: "flex", color: "#7dd3fc" }}>
           {profile.location}

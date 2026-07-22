@@ -5,7 +5,7 @@
 
 export const profile = {
   name: "Manohar Chawada",
-  role: "React Native Developer",
+  role: "React Native & Full Stack Developer",
   shortRole: "Mobile & Web Applications",
   tagline:
     "Results-driven React Native Developer with 3 years of experience building and deploying high-performance mobile and web applications for Android and iOS. 4 production apps shipped. Expanding into full-stack development.",
@@ -94,7 +94,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Veels - OTT Streaming Platform",
-    period: "2024",
+    period: "2025",
     blurb:
       "Full-featured OTT streaming platform supporting movies, web series, music, podcasts & short-form video (Reels).",
     problem:
@@ -119,7 +119,7 @@ export const projects: Project[] = [
   },
   {
     title: "IQONS - Football Community App",
-    period: "2023",
+    period: "2025",
     blurb:
       "End-to-end football community mobile application with real-time engagement and monetization.",
     problem:
@@ -153,6 +153,32 @@ export const projects: Project[] = [
     ],
     stack: ["Next.js", "React.js", "Firebase", "REST APIs"],
     website: "https://www.swingist.com/" // Note: Replace with actual URL
+  },
+  {
+    title: "Video-Streaming-Backend",
+    period: "2026",
+    blurb:
+      "A YouTube-style video sharing platform backend with user auth, video uploads, playlists, comments, and likes.",
+    problem:
+      "Needed a scalable REST API to handle video uploads, streaming metadata, and social features (comments, likes, playlists) with secure, stateless authentication.",
+    architecture: [
+      "Implemented JWT-based access and refresh token authentication with bcrypt password hashing for secure, stateless sessions.",
+      "Integrated Multer and Cloudinary to handle video, thumbnail, avatar, and cover image uploads and hosting.",
+      "Used Mongoose with mongoose-aggregate-paginate-v2 to build paginated aggregation pipelines for video feeds and playlists.",
+      "Designed modular Express routers and controllers separating users, videos/playlists, and comments for maintainability."
+    ],
+    stack: [
+      "Node.js",
+      "Express.js",
+      "JavaScript",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Cloudinary",
+      "Multer",
+      "REST APIs"
+    ],
+    website: "https://github.com/manoharchawada/full-stack-application"
   }
 ];
 
