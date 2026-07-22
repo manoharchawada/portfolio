@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Command } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { navSections, profile } from "@/data/content";
 import { useCommandMenu } from "@/components/ui/CommandMenu";
@@ -56,12 +57,6 @@ export function Nav() {
     };
   }, [open]);
 
-  const initials = profile.name
-    .split(" ")
-    .map((p) => p[0])
-    .slice(0, 2)
-    .join("");
-
   return (
     <header
       className={cn(
@@ -76,10 +71,17 @@ export function Nav() {
         <a
           href="#hero"
           className="group inline-flex items-center gap-3"
-          aria-label="Home">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] font-mono text-[0.72rem] tracking-tight text-[var(--color-text)] transition-colors group-hover:border-[var(--color-accent)]/40">
-            {initials}
-            <span className="absolute -inset-px rounded-lg bg-gradient-to-br from-[var(--color-accent)]/0 via-[var(--color-accent)]/0 to-[var(--color-accent)]/20 opacity-0 transition-opacity group-hover:opacity-100" />
+          aria-label="Home"
+        >
+          <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] transition-colors group-hover:border-[var(--color-accent)]/40">
+            <Image
+              src={profile.avatarUrl}
+              alt={profile.name}
+              width={36}
+              height={36}
+              className="h-full w-full object-cover"
+            />
+            <span className="absolute -inset-px rounded-full bg-gradient-to-br from-[var(--color-accent)]/0 via-[var(--color-accent)]/0 to-[var(--color-accent)]/20 opacity-0 transition-opacity group-hover:opacity-100" />
           </span>
           <span className="hidden flex-col leading-tight sm:flex">
             <span className="text-sm font-medium tracking-tight text-[var(--color-text)]">
