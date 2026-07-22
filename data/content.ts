@@ -154,7 +154,11 @@ export const projects: Project[] = [
     stack: ["Next.js", "React.js", "Firebase", "REST APIs"],
     website: "https://www.swingist.com/" // Note: Replace with actual URL
   },
+<<<<<<< Updated upstream
   {
+=======
+   {
+>>>>>>> Stashed changes
     title: "Video-Streaming-Backend",
     period: "2026",
     blurb:
