@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
+import fs from "fs";
+import path from "path";
 
-export const runtime = "edge";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-export default function AppleIcon() {
+export default async function AppleIcon() {
+  const avatarPath = path.join(process.cwd(), "public", "avatar.png");
+  const avatarBuffer = fs.readFileSync(avatarPath);
+  const avatarBase64 = `data:image/png;base64,${avatarBuffer.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -14,30 +19,23 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background:
-            "radial-gradient(circle at 30% 0%, rgba(90,169,255,0.25), transparent 60%), linear-gradient(160deg, #0f1218 0%, #07080c 100%)",
-          color: "#e6e8ee",
-          fontSize: 92,
-          fontWeight: 700,
-          letterSpacing: -4,
-          fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif",
-          borderRadius: 36,
-          border: "2px solid rgba(90,169,255,0.35)",
+          borderRadius: "50%",
+          overflow: "hidden",
         }}
       >
-        <span
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={avatarBase64}
+          alt="Apple Icon"
           style={{
-            background: "linear-gradient(135deg, #ffffff 0%, #5aa9ff 100%)",
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-            display: "flex",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "50%",
           }}
-        >
-          RS
-        </span>
+        />
       </div>
     ),
-    { ...size },
+    { ...size }
   );
 }
