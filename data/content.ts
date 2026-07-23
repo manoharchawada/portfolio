@@ -239,6 +239,16 @@ export const skills: SkillGroup[] = [
       { name: "React Navigation" },
       { name: "React Hook Form" }
     ]
+  },
+  {
+    category: "AI Tools",
+    items: [
+      { name: "Antigravity" },
+      { name: "MIMO" },
+      { name: "Claude" },
+      { name: "OpenAI" },
+      { name: "Gemini" },
+    ]
   }
 ];
 
