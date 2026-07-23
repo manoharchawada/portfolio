@@ -214,6 +214,7 @@ export const skills: SkillGroup[] = [
     items: [
       { name: "Node.js" },
       { name: "Express.js" },
+      { name: "MongoDB" },
       { name: "Firebase Firestore" },
       { name: "Firebase Auth" }
     ]
